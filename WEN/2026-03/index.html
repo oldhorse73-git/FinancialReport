@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 智能合約溯源系統 POC</title>
+    <style>
+        /* 明亮科技風格 CSS */
+        :root {
+            --primary-color: #0061FF; /* 科技藍 */
+            --hover-color: #004ecc;
+            --bg-color: #F4F7FE;
+            --panel-bg: #FFFFFF;
+            --border-color: #E2E8F0;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; height: 100vh; margin: 0; background-color: var(--bg-color); color: var(--text-main);
+        }
+        
+        /* 左側文件區 */
+        .html-container { 
+            flex: 6; 
+            border-right: 1px solid var(--border-color); 
+            background: var(--panel-bg);
+            box-shadow: 2px 0 10px rgba(0,0,0,0.03);
+            z-index: 10;
+        }
+        iframe { width: 100%; height: 100%; border: none; }
+        
+        /* 右側 AI 面板區 */
+        .data-panel { 
+            flex: 4; padding: 30px; overflow-y: auto; 
+        }
+        .header { margin-bottom: 30px; }
+        .header h2 { margin: 0; font-size: 24px; font-weight: 700; color: var(--primary-color); display: flex; align-items: center; gap: 8px;}
+        .header p { margin: 5px 0 0 0; color: var(--text-muted); font-size: 14px; }
+        
+        /* 數據表格設計 */
+        table { 
+            width: 100%; border-collapse: separate; border-spacing: 0; 
+            background: var(--panel-bg); border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        th, td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { background-color: #F8FAFC; font-weight: 600; color: var(--text-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;}
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background-color: #F1F5F9; }
+        
+        /* 科技感跳轉按鈕 */
+        .jump-btn { 
+            padding: 8px 16px; background-color: var(--primary-color); color: white; 
+            border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0, 97, 255, 0.2);
+            display: flex; align-items: center; gap: 6px;
+        }
+        .jump-btn:hover { background-color: var(--hover-color); transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0, 97, 255, 0.3);}
+        .jump-btn:active { transform: translateY(0); }
+        .jump-btn::before { content: "✨"; font-size: 14px;}
+    </style>
+</head>
+<body>
+
+    <div class="html-container">
+        <iframe id="myHtmlViewer" src="contract.html"></iframe>
+    </div>
+
+    <div class="data-panel">
+        <div class="header">
+            <h2>AI 智能合約解析引擎</h2>
+            <p>已自動萃取關鍵數據。點擊按鈕即可精準溯源至合約原文位置。</p>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>指標名稱 (Indicator)</th>
+                    <th>萃取數值 (Value)</th>
+                    <th>溯源驗證 (Traceability)</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+<tr>
+    <td>現金及約當現金</td>
+    <td>517 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=517'">精準定位</button></td>
+</tr>
+<tr>
+    <td>應收帳款</td>
+    <td>3,510 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=3,510'">精準定位</button></td>
+</tr>
+<tr>
+    <td>總資產</td>
+    <td>154,644 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=154,644'">精準定位</button></td>
+</tr>
+<tr>
+    <td>長期債務</td>
+    <td>94,414 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=94,414'">精準定位</button></td>
+</tr>
+<tr>
+    <td>股東權益</td>
+    <td>21,070 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=21,070'">精準定位</button></td>
+</tr>
+<tr>
+    <td>營收</td>
+    <td>13,597 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=13,597'">精準定位</button></td>
+</tr>
+<tr>
+    <td>營業利益</td>
+    <td>3,208 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=3,208'">精準定位</button></td>
+</tr>
+<tr>
+    <td>淨利</td>
+    <td>1,163 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=1,163'">精準定位</button></td>
+</tr>
+<tr>
+    <td>EPS (基本)</td>
+    <td>9.27</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=9.27'">精準定位</button></td>
+</tr>
+<tr>
+    <td>EPS (稀釋)</td>
+    <td>9.17</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=9.17'">精準定位</button></td>
+</tr>
+<tr>
+    <td>調整後 EBITDA</td>
+    <td>5,637 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=5,637'">精準定位</button></td>
+</tr>
+<tr>
+    <td>利息費用</td>
+    <td>1,256 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=1,256'">精準定位</button></td>
+</tr>
+<tr>
+    <td>所得稅費用</td>
+    <td>465 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=465'">精準定位</button></td>
+</tr>
+<tr>
+    <td>廣告收入</td>
+    <td>358 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=358'">精準定位</button></td>
+</tr>
+<tr>
+    <td>其他收入</td>
+    <td>906 百萬</td>
+    <td><button class="jump-btn" onclick="document.getElementById('myHtmlViewer').src='contract.html#:~:text=906'">精準定位</button></td>
+</tr>
+                </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
